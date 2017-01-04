@@ -12,6 +12,18 @@ public class BinaryTreeOperations {
 	
 	public static void main(String args[]){
 		
+		BinaryTree seven = new BinaryTree(null, null, 7);
+		BinaryTree six = new BinaryTree(null, null, 6);
+		BinaryTree five = new BinaryTree(null, null, 5);
+		BinaryTree four = new BinaryTree(null, null, 4);
+		BinaryTree three = new BinaryTree(six, seven, 3);
+		BinaryTree two = new BinaryTree(four, five, 2);
+		BinaryTree root = new BinaryTree(two, three, 1);
+		
+		preOrder(root);
+		inOrder(root);
+		postOrder(root);
+		
 	}
 	
 	public static void preOrder(BinaryTree root){
