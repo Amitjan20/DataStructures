@@ -1,0 +1,42 @@
+import java.util.Arrays;
+
+public class TwoSumClosestToZero {
+	
+	public static void main(String args[]) {
+		
+		twoSum();
+	}
+
+	private static void twoSum() {
+		
+		int arr[] = {1, 60, -10, 70, -80, 85};
+		
+		int posClosest = Integer.MAX_VALUE;
+		int negClosest = Integer.MIN_VALUE;
+		
+		Arrays.sort(arr);
+		
+		int low = 0;
+		int high = arr.length-1;
+		
+		while(low < high) {
+			int temp = arr[low] + arr[high];
+			if(temp > 0 ) {
+				if(temp < posClosest) {
+					posClosest = temp;
+				}
+				high--;
+			}else if( temp < 0 ){
+				if(temp > negClosest)
+				negClosest = temp;
+				
+				low++;
+			}
+			
+		}
+		
+		System.out.println(Math.abs(negClosest) > posClosest ? posClosest : negClosest);
+		
+	}
+
+}
