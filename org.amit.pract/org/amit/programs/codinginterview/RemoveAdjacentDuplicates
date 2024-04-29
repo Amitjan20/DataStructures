@@ -1,1 +1,34 @@
+package com.ebay.sese.rest.helper;
+
+import java.util.Stack;
+
+public class RemoveAdjacentDuplicates {
+
+    public static void main(String[] args) {
+        String str = "abbaca";
+
+
+        System.out.println(removeDuplicates(str));
+    }
+
+    private static String removeDuplicates(String str) {
+
+        Stack<Character> stack = new Stack<>();
+
+        for(int i=0; i<str.length(); i++){
+            if(!stack.isEmpty() && stack.peek() == str.charAt(i)){
+                stack.pop();
+            }else{
+                stack.push(str.charAt(i));
+            }
+        }
+
+        String ans  = "";
+        while(!stack.isEmpty()){
+            ans = stack.pop() + ans;
+        }
+
+        return  ans;
+    }
+}
 
