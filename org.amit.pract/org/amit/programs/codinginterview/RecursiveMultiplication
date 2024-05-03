@@ -1,0 +1,21 @@
+package com.ebay.sese.rest.helper;
+
+public class RecursiveMultiplication {
+
+    public static void main(String[] args) {
+
+            int num = 12345;
+            int total = multiply(num);
+            System.out.println("Total multiplication of digits in " + num + " is " + total);
+    }
+
+    private static int multiply(int num) {
+
+        if(num == 0) {
+            return 1;
+        }
+        int newNum = multiply(num / 10);
+
+        return newNum * (num % 10);
+    }
+}
