@@ -1,0 +1,28 @@
+package com.ebay.sese.rest.helper;
+
+public class RecursiveFibonacci {
+
+    public static void main(String[] args) {
+
+            int num = 5;
+            int total = fibonacci(num);
+            System.out.println("Total fibonacci of " + num + " is " + total);
+    }
+
+    private static int fibonacci(int num) {
+
+        if(num ==0) {
+            return 0;
+        }
+        if(num == 1) {
+            return 1;
+        }
+
+        int smallAns = fibonacci(num - 1) + fibonacci(num - 2);
+
+        return smallAns;
+
+    }
+}
+
+
