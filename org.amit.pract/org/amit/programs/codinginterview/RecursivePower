@@ -1,0 +1,22 @@
+package com.ebay.sese.rest.helper;
+
+public class RecursivePower {
+
+    public static void main(String[] args) {
+
+            int num = 5;
+            int power  = 3;
+            int total = power(num, power);
+            System.out.println("Total power of digits in " + num + " is " + total);
+    }
+
+    private static int power(int num, int power) {
+
+        if(power == 0) {
+            return 1;
+        }
+        int newNum = power(num, power - 1);
+
+        return newNum * num;
+    }
+}
