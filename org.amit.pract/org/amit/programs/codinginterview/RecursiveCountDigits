@@ -1,0 +1,21 @@
+package com.ebay.sese.rest.helper;
+
+public class RecursiveCountDigits {
+
+    public static void main(String[] args) {
+
+        int num = 12345;
+        int total = count(num);
+        System.out.println("Total count of digits in " + num + " is " + total);
+    }
+
+    private static int count(int num) {
+
+        if(num == 0) {
+            return 0;
+        }
+        int newNum = count(num / 10);
+
+        return newNum + 1;
+    }
+}
